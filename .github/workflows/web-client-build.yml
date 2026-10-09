@@ -1,0 +1,31 @@
+name: Validate AlSaqar ERP UI Assets
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'web-client/**'
+      - '.github/workflows/web-client-build.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'web-client/**'
+      - '.github/workflows/web-client-build.yml'
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web-client
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+      - name: Install dependencies and refresh Bun lock locally
+        run: bun install
+      - name: Type check
+        run: bun run lint
+      - name: Build UI assets
+        run: bun run build
