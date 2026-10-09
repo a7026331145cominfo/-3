@@ -1,0 +1,36 @@
+name: Build AlSaqarERP CSharp Desktop
+on:
+  push:
+    branches: [convert-react-ui-to-csharp]
+    paths:
+      - 'desktop-csharp/**'
+      - '.github/workflows/csharp-desktop-build.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'desktop-csharp/**'
+      - '.github/workflows/csharp-desktop-build.yml'
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup .NET 8
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - name: Restore
+        run: dotnet restore desktop-csharp/AlSaqarERP.Desktop.csproj
+      - name: Build
+        run: dotnet build desktop-csharp/AlSaqarERP.Desktop.csproj --configuration Release --no-restore
+      - name: Publish Windows application
+        run: dotnet publish desktop-csharp/AlSaqarERP.Desktop.csproj --configuration Release --no-restore --output artifacts/csharp-desktop
+      - name: Upload CSharp desktop artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: AlSaqarERP-CSharp-Desktop
+          path: artifacts/csharp-desktop/
+          if-no-files-found: error
