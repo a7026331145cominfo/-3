@@ -1,0 +1,140 @@
+import { TableInventoryItem, ProcedureInventoryItem, ScreenDefinition } from '../types/erp';
+
+export const GTS_TABLES: TableInventoryItem[] = [
+  { schema: 'dbo', table: 'Account_Accounts', module: 'Account', columnsCount: 26, approxRows: 217 },
+  { schema: 'dbo', table: 'Account_AccountType', module: 'Account', columnsCount: 2, approxRows: 2 },
+  { schema: 'dbo', table: 'Account_Branch', module: 'Account', columnsCount: 15, approxRows: 3 },
+  { schema: 'dbo', table: 'Account_CostCenters', module: 'Account', columnsCount: 19, approxRows: 6 },
+  { schema: 'dbo', table: 'Account_CustSup', module: 'Account', columnsCount: 34, approxRows: 48 },
+  { schema: 'dbo', table: 'Account_CustTailor', module: 'Account', columnsCount: 26, approxRows: 0 },
+  { schema: 'dbo', table: 'Account_DailyEntry', module: 'Account', columnsCount: 22, approxRows: 142 },
+  { schema: 'dbo', table: 'Account_DefualtAccount', module: 'Account', columnsCount: 15, approxRows: 4 },
+  { schema: 'dbo', table: 'Account_DefualtAccount2', module: 'Account', columnsCount: 5, approxRows: 40 },
+  { schema: 'dbo', table: 'Account_DefualtCustomer', module: 'Account', columnsCount: 5, approxRows: 5 },
+  { schema: 'dbo', table: 'Account_Final', module: 'Account', columnsCount: 2, approxRows: 3 },
+  { schema: 'dbo', table: 'Account_Nature', module: 'Account', columnsCount: 2, approxRows: 3 },
+  { schema: 'dbo', table: 'Account_Place', module: 'Account', columnsCount: 10, approxRows: 1 },
+  { schema: 'dbo', table: 'Account_Projects', module: 'Account', columnsCount: 21, approxRows: 5 },
+  { schema: 'dbo', table: 'Account_ProjectsDetails', module: 'Account', columnsCount: 3, approxRows: 8 },
+  { schema: 'dbo', table: 'Account_Receipts', module: 'Account', columnsCount: 25, approxRows: 34 },
+  { schema: 'dbo', table: 'Account_ReceiptsDetails', module: 'Account', columnsCount: 15, approxRows: 34 },
+  { schema: 'dbo', table: 'Account_Payment', module: 'Account', columnsCount: 25, approxRows: 28 },
+  { schema: 'dbo', table: 'Account_SalesMan', module: 'Account', columnsCount: 16, approxRows: 4 },
+  { schema: 'dbo', table: 'Account_Stores', module: 'Account', columnsCount: 14, approxRows: 4 },
+  { schema: 'dbo', table: 'Account_Suspended', module: 'Account', columnsCount: 2, approxRows: 2 },
+  { schema: 'dbo', table: 'Account_Type', module: 'Account', columnsCount: 2, approxRows: 4 },
+  { schema: 'dbo', table: 'AccountStartBalance', module: 'Account', columnsCount: 8, approxRows: 12 },
+  { schema: 'dbo', table: 'AccountYearEndClosing', module: 'Account', columnsCount: 7, approxRows: 0 },
+  { schema: 'dbo', table: 'AccountYears', module: 'Account', columnsCount: 2, approxRows: 3 },
+  { schema: 'dbo', table: 'Item_Items', module: 'Item', columnsCount: 35, approxRows: 128 },
+  { schema: 'dbo', table: 'Item_Unit', module: 'Item', columnsCount: 5, approxRows: 6 },
+  { schema: 'dbo', table: 'Item_Groups', module: 'Item', columnsCount: 6, approxRows: 8 },
+  { schema: 'dbo', table: 'Item_Class', module: 'Item', columnsCount: 5, approxRows: 5 },
+  { schema: 'dbo', table: 'Item_Company', module: 'Item', columnsCount: 8, approxRows: 12 },
+  { schema: 'dbo', table: 'Item_Country', module: 'Item', columnsCount: 4, approxRows: 20 },
+  { schema: 'dbo', table: 'Item_OpenQuantity', module: 'Item', columnsCount: 9, approxRows: 45 },
+  { schema: 'dbo', table: 'Item_PriceList', module: 'Item', columnsCount: 8, approxRows: 4 },
+  { schema: 'dbo', table: 'Item_BarCode', module: 'Item', columnsCount: 6, approxRows: 128 },
+  { schema: 'dbo', table: 'Item_Guarantee', module: 'Item', columnsCount: 5, approxRows: 2 },
+  { schema: 'dbo', table: 'Item_Doctor', module: 'Item', columnsCount: 6, approxRows: 0 },
+  { schema: 'dbo', table: 'Order_Order', module: 'Order', columnsCount: 42, approxRows: 86 },
+  { schema: 'dbo', table: 'Order_OrderDetails', module: 'Order', columnsCount: 28, approxRows: 240 },
+  { schema: 'dbo', table: 'Order_OrderReturn', module: 'Order', columnsCount: 38, approxRows: 12 },
+  { schema: 'dbo', table: 'Order_OrderReturnDetails', module: 'Order', columnsCount: 26, approxRows: 24 },
+  { schema: 'dbo', table: 'Order_Purchases', module: 'Order', columnsCount: 35, approxRows: 54 },
+  { schema: 'dbo', table: 'Order_PurchasesDetails', module: 'Order', columnsCount: 25, approxRows: 160 },
+  { schema: 'dbo', table: 'Order_PurchasesReturn', module: 'Order', columnsCount: 35, approxRows: 6 },
+  { schema: 'dbo', table: 'Order_PurchasesReturnDetails', module: 'Order', columnsCount: 25, approxRows: 14 },
+  { schema: 'dbo', table: 'Order_StoresTransfer', module: 'Order', columnsCount: 18, approxRows: 9 },
+  { schema: 'dbo', table: 'Order_StoresTransferDetails', module: 'Order', columnsCount: 12, approxRows: 27 },
+  { schema: 'dbo', table: 'Tran_Tran', module: 'Tran', columnsCount: 26, approxRows: 340 },
+  { schema: 'dbo', table: 'User_Login', module: 'User', columnsCount: 27, approxRows: 6 },
+  { schema: 'dbo', table: 'User_Groups', module: 'User', columnsCount: 5, approxRows: 4 },
+  { schema: 'dbo', table: 'User_Permission', module: 'User', columnsCount: 16, approxRows: 460 },
+  { schema: 'dbo', table: 'User_Screens', module: 'User', columnsCount: 11, approxRows: 115 },
+  { schema: 'dbo', table: 'Contract_Contract', module: 'Contract', columnsCount: 30, approxRows: 8 },
+  { schema: 'dbo', table: 'Contract_Details', module: 'Contract', columnsCount: 16, approxRows: 22 },
+  { schema: 'dbo', table: 'Emp_Employee', module: 'Emp', columnsCount: 28, approxRows: 14 },
+  { schema: 'dbo', table: 'Emp_Payroll', module: 'Emp', columnsCount: 20, approxRows: 42 },
+  { schema: 'dbo', table: 'Restaurant_Tables', module: 'Restaurant', columnsCount: 8, approxRows: 16 },
+  { schema: 'dbo', table: 'Restaurant_Orders', module: 'Restaurant', columnsCount: 18, approxRows: 30 },
+  { schema: 'dbo', table: 'Checks_Checks', module: 'Account', columnsCount: 14, approxRows: 18 },
+];
+
+export const GTS_PROCEDURES: ProcedureInventoryItem[] = [
+  { name: 'GetReport_Orders', module: 'Orders_Sales', description: 'تقرير المبيعات والطلبات حسب التاريخ والفرع والمستخدم', paramCount: 8 },
+  { name: 'GetReport_OrderDetailsSmall', module: 'Orders_Sales', description: 'تفاصيل أصناف المبيعات وتوزيع الكميات والأسعار', paramCount: 6 },
+  { name: 'GetReport_OrdersReturn', module: 'Orders_Sales', description: 'تقرير مرتجعات المبيعات مع أسباب الإرجاع والعملاء', paramCount: 7 },
+  { name: 'GetReport_Purches', module: 'Purchases', description: 'تقرير المشتريات الإجمالي وفواتير الموردين', paramCount: 8 },
+  { name: 'GetReport_PurchesDetails', module: 'Purchases', description: 'تفاصيل فواتير المشتريات والأصناف الواردة والتكلفة', paramCount: 6 },
+  { name: 'GetReport_VatReport', module: 'Accounting', description: 'إقرار ضريبة القيمة المضافة 15% مشتريات ومبيعات', paramCount: 4 },
+  { name: 'Ledger_Account', module: 'Accounting', description: 'كشف حساب الأستاذ العام وتفاصيل الحركات المدينة والدائنة', paramCount: 5 },
+  { name: 'AddTempTrialBalance_New', module: 'Accounting', description: 'توليد ميزان المراجعة بالمجاميع والأرصدة لجميع الحسابات', paramCount: 4 },
+  { name: 'Get_ProfitAndLossAccount', module: 'Accounting', description: 'حساب الأرباح والخسائر وقائمة الدخل للفترة المالية', paramCount: 4 },
+  { name: 'GetReport_MovementsDailyReport', module: 'Accounting', description: 'حركة الصناديق والمبيعات اليومية المقارنة', paramCount: 4 },
+  { name: 'GetQuantityFromItem_ByItemCode_StoreId', module: 'Inventory', description: 'الاستعلام الفوري عن رصيد الصنف بمستودع معين', paramCount: 3 },
+  { name: 'Update_OpenQuantity', module: 'Inventory', description: 'اعتماد وتحديث الرصيد الافتتاحي للأصناف بالمستودعات', paramCount: 5 },
+  { name: 'Insert_Tran_Tran', module: 'Shared_Insert', description: 'ترحيل القيود المحاسبية التلقائية وتحديث أرصدة الحسابات', paramCount: 12 },
+  { name: 'GetAllBranches', module: 'Shared_Select', description: 'استرجاع قائمة الفروع النشطة في النظام', paramCount: 1 },
+  { name: 'GetReport_OrdersBySalesMan', module: 'Orders_Sales', description: 'تقرير مبيعات المناديب ونسب العمولات والتحصيلات', paramCount: 5 },
+  { name: 'GetReport_MovementItemBetweenToDate', module: 'Inventory', description: 'تقرير كرت حركة صنف بين تاريخين في المستودعات', paramCount: 6 },
+  { name: 'Select_SearchAccountTran', module: 'Accounting', description: 'بحث متقدم في القيود وسندات الصرف والقبض واليومية', paramCount: 7 },
+  { name: 'Get_ContractCustomer', module: 'Contracts', description: 'عقود وإيجارات العملاء والضمانات البنكية سارية المفعول', paramCount: 4 },
+];
+
+export const ALL_SYSTEM_SCREENS: ScreenDefinition[] = [
+  // Dashboard & Link
+  { id: 0, name: 'لوحة تشغيل الصقر ERP (MainForm)', screenNum: 0, category: 'الرئيسية', iconName: 'LayoutDashboard', description: 'لوحة التشغيل المركزية لنظام الصقر ERP المبنية على جداول GTSdb2026 وعقود الصلاحيات والإجراءات الفعلية' },
+  { id: 999, name: 'ربط وتشغيل النظام بالكامل (Full System Link)', screenNum: 999, category: 'ربط وتشغيل النظام', iconName: 'Workflow', description: 'متصفح كافة الشاشات الـ 369، وجداول قاعدة البيانات الـ 180، وكتالوج الإجراءات المخزنة' },
+  { id: 998, name: 'بدائل الشاشات الأصلية (ScreenReplacementForm)', screenNum: 998, category: 'ربط وتشغيل النظام', iconName: 'Layers', description: 'بدائل الشاشات المستخرجة من User_Screens وتوجيهها للمسار التشغيلي الحقيقي' },
+  { id: 997, name: 'إعداد الاتصال (ConnectionSettingsForm)', screenNum: 997, category: 'ربط وتشغيل النظام', iconName: 'Database', description: 'إعداد واختبار سلسلة الاتصال بخادم SQL Server وقاعدة بيانات GTSdb2026' },
+  { id: 996, name: 'فحص قاعدة البيانات (SchemaForm)', screenNum: 996, category: 'ربط وتشغيل النظام', iconName: 'Table', description: 'استعراض جداول النظام والحقول والأنواع والمفاتيح الأساسية' },
+
+  // Accounting & Ledgers
+  { id: 43, name: 'دفتر الأستاذ العام وكشف الحساب', screenNum: 43, category: 'المحاسبة', legacyName: 'Frms.Reports.Account.FrmRPLeadger', primaryProcedure: 'Ledger_Account', iconName: 'BookOpen', description: 'كشف حساب تفصيلي للأستاذ العام مع رصيد افتتاحي وحركات ورصيد تراكمي' },
+  { id: 36, name: 'القيود اليومية المحاسبية', screenNum: 36, category: 'المحاسبة', legacyName: 'Frms.Account.FrmDailyRestrictions', primaryProcedure: 'Insert_Tran_Tran', iconName: 'FileSpreadsheet', description: 'تسجيل وتدقيق وترحيل قيود اليومية العامة المزدوجة' },
+  { id: 30, name: 'دليل شجرة الحسابات', screenNum: 30, category: 'المحاسبة', legacyName: 'Frms.Account.FrmOpenAccount', iconName: 'FolderTree', description: 'هيكل الحسابات الرئيسي والفرعي والأصول والخصوم والمصروفات والإيرادات' },
+  { id: 45, name: 'ميزان المراجعة وقائمة المركز المالي', screenNum: 45, category: 'المحاسبة', legacyName: 'Frms.Reports.Account.FrmRPMizaniyah', primaryProcedure: 'AddTempTrialBalance_New', iconName: 'Scale', description: 'ميزان المراجعة بالمجاميع والأرصدة، والميزانية العمومية' },
+  { id: 88, name: 'قائمة الدخل والأرباح والخسائر', screenNum: 88, category: 'المحاسبة', legacyName: 'Frms.Reports.AllBranch.FrmRPProfitAndLossAccountAllBran', primaryProcedure: 'Get_ProfitAndLossAccount', iconName: 'TrendingUp', description: 'تقرير صافي الربح والخسارة ومجمل الربح التشغيلي لجميع الفروع' },
+
+  // Financial Vouchers
+  { id: 31, name: 'سند قبض نقدي / بنكي', screenNum: 31, category: 'السندات', legacyName: 'Frms.Account.FrmReceipts', iconName: 'ArrowDownLeft', description: 'سندات قبض النقدية والتحويلات والشيكات من العملاء وتوليد قيودها تلقائياً' },
+  { id: 32, name: 'سند صرف نقدي / بنكي', screenNum: 32, category: 'السندات', legacyName: 'Frms.Account.FrmPayment', iconName: 'ArrowUpRight', description: 'سندات صرف النقدية والشيكات للموردين والمصروفات مع الترحيل الفوري' },
+  { id: 123, name: 'إدارة الشيكات وأوراق القبض والدفع', screenNum: 123, category: 'السندات', legacyName: 'Frms.Account.FrmCheckCollection', iconName: 'CreditCard', description: 'متابعة الشيكات الصادرة والواردة وتواريخ الاستحقاق والتحصيل والإرجاع' },
+
+  // Sales
+  { id: 59, name: 'فاتورة مبيعات ونقطة بيع كاشير', screenNum: 59, category: 'المبيعات', legacyName: 'Frms.Orders.FrmCashir', primaryProcedure: 'GetReport_Orders', iconName: 'ShoppingCart', description: 'شاشة الكاشير والمبيعات السريعة والآجلة وضريبة القيمة المضافة ZATCA' },
+  { id: 14, name: 'مردودات المبيعات', screenNum: 14, category: 'المبيعات', legacyName: 'Frms.Orders.FrmOrderReturn', primaryProcedure: 'GetReport_OrdersReturn', iconName: 'RotateCcw', description: 'إرجاع بضائع مبيعات وإرجاعها للمستودع وتعديل حساب العميل والضريبة' },
+  { id: 23, name: 'بطاقة العميل والحسابات الجارية', screenNum: 23, category: 'العملاء والموردون', legacyName: 'Frms.Cust_Sup.FrmReservation', targetTable: 'dbo.Account_CustSup', iconName: 'Users', description: 'إدارة بيانات العملاء، الحدود الائتمانية، الأرقام الضريبية، وكشوف الحساب' },
+  { id: 127, name: 'تقرير مبيعات المناديب والعمولات', screenNum: 127, category: 'التقارير', legacyName: 'Frms.Reports.SalesMan.FrmAllOrders', primaryProcedure: 'GetReport_OrdersBySalesMan', iconName: 'UserCheck', description: 'حجم مبيعات كل مندوب ونسب الخصم والعمولات المستحقة' },
+
+  // Purchases
+  { id: 15, name: 'فاتورة مشتريات بضاعة', screenNum: 15, category: 'المشتريات', legacyName: 'Frms.Orders.FrmPurchases', primaryProcedure: 'GetReport_Purches', iconName: 'Truck', description: 'تسجيل فواتير الموردين وتحديث التكلفة وأرصدة المستودعات آلياً' },
+  { id: 49, name: 'مردودات المشتريات', screenNum: 49, category: 'المشتريات', legacyName: 'Frms.Reports.Purches.FrmAllPurchesReturn', iconName: 'CornerUpLeft', description: 'إرجاع بضائع المشتريات للموردين وخصمها من المستودع ورصيد المورد' },
+  { id: 24, name: 'بطاقة المورد وحسابات التوريد', screenNum: 24, category: 'العملاء والموردون', legacyName: 'Frms.Cust_Sup.FrmSuppliers', targetTable: 'dbo.Account_CustSup', iconName: 'Building2', description: 'بيانات الموردين والشركات الموردة والأرصدة الدائنة' },
+
+  // Inventory & Items
+  { id: 8, name: 'بطاقة الصنف ودليل الأصناف', screenNum: 8, category: 'المخزون والأصناف', legacyName: 'Frms.Items.FrmItems', targetTable: 'dbo.Item_Items', iconName: 'Package', description: 'تعريف الأصناف، الباركود، أسعار الشراء والبيع، وحدات القياس، والحد الأدنى' },
+  { id: 5, name: 'وحدات قياس الأصناف', screenNum: 5, category: 'المخزون والأصناف', legacyName: 'Frms.Items.FrmUnit', targetTable: 'dbo.Item_Unit', iconName: 'Layers', description: 'وحدات القياس (قطعة، حبة، كرتون، درزن، متر، كجم)' },
+  { id: 7, name: 'مجموعات وتصنيفات الأصناف', screenNum: 7, category: 'المخزون والأصناف', legacyName: 'Frms.Items.FrmGroupsRes', targetTable: 'dbo.Item_Groups', iconName: 'Boxes', description: 'شجرة مجموعات المواد والتصنيفات الفرعية' },
+  { id: 18, name: 'الأرصدة والكميات الافتتاحية للمخزون', screenNum: 18, category: 'المخزون والأصناف', legacyName: 'Frms.Orders.FrmOpenQuantity', primaryProcedure: 'Update_OpenQuantity', iconName: 'PlusCircle', description: 'إدخال جرد أول المدة للأصناف بالمستودعات وتأسيس الكميات والتكلفة' },
+  { id: 25, name: 'التحويل المخزني بين الفروع والمستودعات', screenNum: 25, category: 'المخزون والأصناف', legacyName: 'Frms.Orders.FrmStoresTransfer', iconName: 'ArrowLeftRight', description: 'نقل كميات الأصناف بين مستودع وآخر مع إذن التحويل والاستلام' },
+  { id: 83, name: 'جرد وتسوية المخزون والعجز والزيادة', screenNum: 83, category: 'المخزون والأصناف', legacyName: 'Frms.Orders.FrmInventorySettlementMinus', iconName: 'ClipboardCheck', description: 'تسجيل الجرد الفعلي ومقارنته بالرصيد الدفتري وتسوية الفوارق' },
+
+  // Centers & Operations
+  { id: 2, name: 'مراكز التكلفة والمشاريع', screenNum: 2, category: 'المراكز والعمليات', legacyName: 'Frms.Account.FrmCostCenter', targetTable: 'dbo.Account_CostCenters', iconName: 'Target', description: 'توزيع المصروفات والإيرادات على مراكز التكلفة والمشاريع' },
+  { id: 98, name: 'إدارة العقود والتأجير والضمانات', screenNum: 98, category: 'المراكز والعمليات', legacyName: 'Frms.Contract.FrmContract', iconName: 'FileSignature', description: 'عقود العملاء، إيجارات المعدات، والضمانات البنكية' },
+  { id: 76, name: 'الموظفون وشؤون الموظفين والرواتب', screenNum: 76, category: 'المراكز والعمليات', legacyName: 'Frms.Payroll.FrmEmployee', iconName: 'Briefcase', description: 'سجلات الموظفين، الرواتب، البدلات، الخصومات ومسير الرواتب' },
+  { id: 58, name: 'شاشة المطاعم وإدارة الطاولات والطلبات', screenNum: 58, category: 'المراكز والعمليات', legacyName: 'Frms.Reports.Orders.FrmAllOrdersRestaurant', iconName: 'Utensils', description: 'نقاط بيع المطاعم، صالة الطاولات، والتوصيل السريع' },
+  { id: 118, name: 'أوامر التصنيع وتكاليف الإنتاج', screenNum: 118, category: 'المراكز والعمليات', legacyName: 'Frms.OrderManufacturing.FrmManufacturingOrder', iconName: 'Wrench', description: 'أوامر تشغيل الإنتاج، صرف المواد الخام، واحتساب تكلفة المنتج النهائي' },
+
+  // Comprehensive Reports
+  { id: 50, name: 'إقرار ضريبة القيمة المضافة (VAT Report)', screenNum: 50, category: 'التقارير', legacyName: 'Frms.Reports.Public.FrmVatReport', primaryProcedure: 'GetReport_VatReport', iconName: 'Percent', description: 'التقرير الضريبي المعتمد لضريبة المبيعات والمشتريات والفارق المستحق' },
+  { id: 41, name: 'تقرير الحركات اليومية والصناديق لجميع الفروع', screenNum: 41, category: 'التقارير', legacyName: 'Frms.Reports.AllBranch.FrmMovementsDailyReportAllBran2', primaryProcedure: 'GetReport_MovementsDailyReport', iconName: 'Calendar', description: 'ملخص الحركات النقدية والمبيعات والمقبوضات اليومية لجميع الفروع' },
+  { id: 60, name: 'تقرير كرت حركة صنف بالمستودعات', screenNum: 60, category: 'التقارير', legacyName: 'Frms.Reports.Stores.FrmRPMovementItem', primaryProcedure: 'GetReport_MovementItemBetweenToDate', iconName: 'Activity', description: 'الوارد والمنصرف والرصيد الحالي لكل صنف بين تاريخين' },
+
+  // Security & Users
+  { id: 1, name: 'المستخدمون وموظفو النظام (User Login)', screenNum: 1, category: 'الأمان والصلاحيات', legacyName: 'Frms.Security.FrmUsers', targetTable: 'dbo.User_Login', iconName: 'UserCheck2', description: 'إدارة المستخدمين، كلمات المرور، الفروع المرتبطة، وتجميد الحسابات' },
+  { id: 3, name: 'مجموعات الصلاحيات والأمان', screenNum: 3, category: 'الأمان والصلاحيات', legacyName: 'Frms.Security.FrmSecurityGroup', targetTable: 'dbo.User_Groups', iconName: 'Shield', description: 'تعريف المجموعات (المدراء، المحاسبون، الكاشير، مسؤولو المستودع)' },
+  { id: 104, name: 'مصفوفة صلاحيات الشاشات والعمليات', screenNum: 104, category: 'الأمان والصلاحيات', legacyName: 'Frms.Security.FrmPermissionsMatrix', targetTable: 'dbo.User_Permission', iconName: 'Key', description: 'ضبط صلاحيات الدخول، الحفظ، التعديل، الحذف، الطباعة، والتصدير لكل شاشة' },
+];
