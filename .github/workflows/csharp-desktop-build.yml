@@ -1,7 +1,7 @@
 name: Build AlSaqarERP CSharp Desktop
 on:
   push:
-    branches: [convert-react-ui-to-csharp]
+    branches: [main]
     paths:
       - 'desktop-csharp/**'
       - '.github/workflows/csharp-desktop-build.yml'
@@ -22,15 +22,15 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 8.0.x
-      - name: Restore
-        run: dotnet restore desktop-csharp/AlSaqarERP.Desktop.csproj
+      - name: Restore for Windows x64
+        run: dotnet restore desktop-csharp/AlSaqarERP.Desktop.csproj --runtime win-x64
       - name: Build
-        run: dotnet build desktop-csharp/AlSaqarERP.Desktop.csproj --configuration Release --no-restore
-      - name: Publish Windows application
-        run: dotnet publish desktop-csharp/AlSaqarERP.Desktop.csproj --configuration Release --no-restore --output artifacts/csharp-desktop
+        run: dotnet build desktop-csharp/AlSaqarERP.Desktop.csproj --configuration Release --runtime win-x64 --no-restore
+      - name: Publish self-contained Windows x64 app
+        run: dotnet publish desktop-csharp/AlSaqarERP.Desktop.csproj --configuration Release --runtime win-x64 --self-contained true --no-restore -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true --output artifacts/csharp-desktop
       - name: Upload CSharp desktop artifact
         uses: actions/upload-artifact@v4
         with:
-          name: AlSaqarERP-CSharp-Desktop
+          name: AlSaqarERP-CSharp-Desktop-win-x64
           path: artifacts/csharp-desktop/
           if-no-files-found: error
