@@ -1,0 +1,6 @@
+{
+  "name": "AlSaqar ERP — نظام الصقر المحاسبي المتكامل",
+  "description": "نظام الصقر ERP لإدارة الحسابات والمبيعات والمشتريات والمخزون والسندات والتقارير مع ربط كامل لجميع الشاشات الداخلية وقاعدة GTSdb2026.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
